@@ -1,26 +1,64 @@
 # Ember-bootstrap-validations
 
-This README outlines the details of collaborating on this Ember addon.
+This Ember addon adds support for validations based on [ember-validations](https://github.com/DockYard/ember-validations) to [ember-bootstrap](http://kaliber5.github.io/ember-bootstrap/) forms.
+ember-bootstrap versions before 0.7.0 came with built-in support for ember-validations, all versions starting at 0.7.0
+need an additional addon that implements validation support for the particular validation library. This addon delivers support for ember-validations.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-bootstrap-validations`
 
-## Running
+You should have installed the ember-bootstrap and ember-validations addons already. If not install them:
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+```
+ember install ember-bootstrap
+ember install ember-validations
+```
 
-## Running Tests
+## Usage
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+Add validations to your model:
 
-## Building
+```js
+import DS from 'ember-data';
+import EmberValidations from 'ember-validations';
 
-* `ember build`
+export default DS.Model.extend(EmberValidations, {
+  username: DS.attr('string'),
+  email: DS.attr('string'),
+  password: DS.attr('string'),
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+  validations: {
+    'username': {
+      presence: true,
+      length: { minimum: 6 }
+    },
+    'email': {
+      presence: true
+    },
+    'password': {
+      presence: true,
+      length: { minimum: 8 }
+    }
+  }
+});
+```
+
+Then assign the model to your form:
+
+```hbs
+{{#bs-form model=model}}
+    {{bs-form-element label="Username" controlType="text" property="username" required=true}}
+    {{bs-form-element label="Email" controlType="email" property="email" required=true}}
+    {{bs-form-element label="Password" controlType="password" property="password" required=true}}
+    {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}
+```
+
+## Authors
+
+[Simon Ihmig](https://github.com/simonihmig) @ [kaliber5](http://www.kaliber5.de)
+
+## Copyright and license
+
+Code and documentation copyright 2015 kaliber5 GmbH. Code released under [the MIT license](LICENSE.md).

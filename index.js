@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-bootstrap-validations'
+  name: 'ember-bootstrap-validations',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
