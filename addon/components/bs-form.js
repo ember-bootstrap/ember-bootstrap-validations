@@ -4,8 +4,7 @@ import BsForm from 'ember-bootstrap/components/bs-form';
 const { computed } = Ember;
 
 export default BsForm.extend({
-  foo: 'bar',
-
+  
   hasValidator: computed.notEmpty('model.validate'),
 
   validate(model) {
