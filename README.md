@@ -61,4 +61,4 @@ Then assign the model to your form:
 
 ## Copyright and license
 
-Code and documentation copyright 2015 kaliber5 GmbH. Code released under [the MIT license](LICENSE.md).
+Code and documentation copyright 2016 kaliber5 GmbH. Code released under [the MIT license](LICENSE.md).
