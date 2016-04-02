@@ -1,5 +1,7 @@
 # Ember-bootstrap-validations
 
+[![Build Status](https://travis-ci.org/kaliber5/ember-bootstrap-validations.svg?branch=master)](https://travis-ci.org/kaliber5/ember-bootstrap-validations)
+
 This Ember addon adds support for validations based on [ember-validations](https://github.com/DockYard/ember-validations) to [ember-bootstrap](http://kaliber5.github.io/ember-bootstrap/) forms.
 ember-bootstrap versions before 0.7.0 came with built-in support for ember-validations, all versions starting at 0.7.0
 need an additional addon that implements validation support for the particular validation library. This addon delivers support for ember-validations.
