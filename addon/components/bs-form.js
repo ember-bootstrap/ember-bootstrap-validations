@@ -8,8 +8,14 @@ export default BsForm.extend({
   hasValidator: computed.notEmpty('model.validate'),
 
   validate(model) {
-    Ember.assert('Model needs to have the ember-validations mixin', model && typeof model.validate === 'function');
-    return this.get('model').validate();
+    let m = model;
+
+    if(model instanceof Ember.ObjectProxy) {
+      m = model.get('content');
+    }
+    
+    Ember.assert('Model needs to have the ember-validations mixin', m && typeof m.validate === 'function');
+    return m.validate();
   }
 
 });
