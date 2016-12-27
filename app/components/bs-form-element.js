@@ -1,1 +1,0 @@
-export { default } from 'ember-bootstrap-validations/components/bs-form-element';

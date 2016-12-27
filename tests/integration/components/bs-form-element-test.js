@@ -35,8 +35,8 @@ test('valid validation is supported as expected', function(assert) {
   });
 
   this.render(hbs`
-    {{#bs-form model=model action=(action "submitAction") invalid=(action "invalidAction")}}
-      {{bs-form-element label="test" property="test"}}
+    {{#bs-form model=model onSubmit=(action "submitAction") onInvalid=(action "invalidAction") as |form|}}
+      {{form.element label="test" property="test"}}
     {{/bs-form}}
   `);
 
@@ -69,8 +69,8 @@ test('invalid validation is supported as expected', function(assert) {
   });
 
   this.render(hbs`
-    {{#bs-form model=model action=(action "submitAction") invalid=(action "invalidAction")}}
-      {{bs-form-element label="test" property="test"}}
+    {{#bs-form model=model onSubmit=(action "submitAction") onInvalid=(action "invalidAction") as |form|}}
+      {{form.element label="test" property="test"}}
     {{/bs-form}}
   `);
 

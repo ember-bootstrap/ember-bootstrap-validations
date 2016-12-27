@@ -8,14 +8,16 @@ need an additional addon that implements validation support for the particular v
 
 ## Installation
 
-`ember install ember-bootstrap-validations`
+    ember install ember-bootstrap-validations
 
 You should have installed the ember-bootstrap and ember-validations addons already. If not install them:
 
-```
-ember install ember-bootstrap
-ember install ember-validations
-```
+    ember install ember-bootstrap
+    ember install ember-validations
+
+If using ember-bootstrap 1.0 (alpha), install the corresponding version of this addon:
+
+    ember install ember-bootstrap-validations@1.0.0-alpha
 
 ## Usage
 
